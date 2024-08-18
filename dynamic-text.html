@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: 100vh;
+            margin: 0;
+        }
+
+        #dynamic-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="dynamic-text"></div>
+
+    <script>
+        const text = "I am a - Web Developer";
+        const delay = 100; // milliseconds
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("dynamic-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, delay);
+            }
+        }
+
+        // Start the typewriter effect when the page loads
+        window.onload = typeWriter;
+    </script>
+</body>
+</html> 
+
